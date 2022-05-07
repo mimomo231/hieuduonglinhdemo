@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Taco Cloud</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+	<h1>Products</h1>
+	<p> </p>
+	<table border='1px'>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th> </th>
+		</tr>
+		<form method="POST" th:object="${shop}">
+			<div class="grid">
+				<div class="product-group" id="musics">
+					<div th:each="product : ${music}">
+						<tr>
+							<td><span th:text="${product.code}"> PRODUCT</span></td>
+							<td><span th:text="${product.des}"> PRODUCT</span></td>
+							<td><span th:text="${product.price}"> PRODUCT</span></td>
+							<td>
+								<a href="###">Edit</a> &nbsp;
+								<a href="###">Delete</a>
+							</td>
+						</tr>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form action="/product/add">
+			<button type="submit">Add Product</button> </br>
+		</form>
+	</table>
+
+
+</body>
+
+</html>
